@@ -47,4 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function turnos(){
+        return $this->hasMany(Turno::class,'id_user');
+    }
 }

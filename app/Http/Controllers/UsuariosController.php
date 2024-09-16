@@ -18,6 +18,11 @@ class UsuariosController extends Controller
         //
     }
 
+    public function showLoginForm()
+    {
+        return view('login');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -38,14 +43,15 @@ class UsuariosController extends Controller
         $usuario->telefono = $request->telefono;
         $usuario->password = Hash::make($request->password);
 
-        $usuario -> save();
+        $usuario->save();
 
         Auth::login($usuario);
 
-        return redirect("/");
+        return redirect()->intended('/');
     }
 
-    public function login(Request $request){
+    public function login(Request $request)
+    {
 
         $credenciales = [
             "nombre" => $request->nombre,
@@ -54,22 +60,23 @@ class UsuariosController extends Controller
 
         $remember = ($request->has('remember')) ? true : false;
 
-        if(Auth::attempt($credenciales, $remember)){
-            $request -> session()->regenerate();
+        if (Auth::attempt($credenciales, $remember)) {
+            $request->session()->regenerate();
 
-            return redirect('/');
-        }else{
+            return redirect()->intended('/');
+        } else {
             return back()->withErrors([
                 'login_error' => 'Usuario o contraseña incorrecto/s!',
             ])->withInput($request->only('nombre'));
         }
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
 
-        $request -> session()-> invalidate();
-        $request -> session()->regenerate();
+        $request->session()->invalidate();
+        $request->session()->regenerate();
 
         return redirect("/");
     }

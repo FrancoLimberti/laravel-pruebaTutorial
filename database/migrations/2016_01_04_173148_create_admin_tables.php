@@ -13,7 +13,7 @@ class CreateAdminTables extends Migration
     {
         return config('admin.database.connection') ?: config('database.default');
     }
-
+   
     /**
      * Run the migrations.
      *

@@ -1,41 +1,22 @@
-<!-- Footer -->
-
-<footer class="bg-light text-center text-lg-start mt-4">
-
+<footer class="bg-light text-center text-lg-start mt-3">
   <div class="container p-4">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Dejanos un comentario</h5>
+    
 
-        <form action="{{ url('/enviar-comentario') }}" method="POST">
-          @csrf
-          <div class="form-floating mb-3">
-            <textarea class="form-control" name="mensaje" placeholder="Leave a comment here" id="floatingTextarea2"
-              style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Comentarios</label>
-            <br>
-            <button type="submit" class="btn btn-primary">
-              Enviar
-            </button>
-          </div>
-        </form>
+    <!-- Información sobre Sentirse Bien -->
+    <div class="text-center mt-4">
+      <h5 class="text-uppercase mb-3">Sentirse Bien</h5>
+      <p>
+        Conéctate con nosotros en nuestras redes sociales y mantente al día con nuestras últimas novedades y ofertas.
+      </p>
+    </div>
 
-        @if(session('success'))
-          <div class="alert alert-success mt-3">
-            {{ session('success') }}
-          </div>
-        @endif
-
-        <br>
-        <h5 class="text-uppercase">Sentirse Bien</h5>
-        <p>
-          Conéctate con nosotros en nuestras redes sociales y mantente al día con nuestras últimas novedades y ofertas.
-        </p>
-      </div>
-      <div class="col-lg-10 col-md-12 mb-4 mb-md-0">
-        <ul class="list-unstyled mb-0 d-flex justify-content-left">
-          <li class="ms-3">
-            <a class="text-dark" href="#" target="_blank" aria-label="WhatsApp">
+    <!-- Íconos de redes sociales -->
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <ul class="list-inline mb-0">
+          <!-- WhatsApp -->
+          <li class="list-inline-item me-3">
+            <a href="#" class="text-dark" target="_blank" aria-label="WhatsApp">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp"
                 viewBox="0 0 16 16">
                 <path
@@ -43,8 +24,10 @@
               </svg>
             </a>
           </li>
-          <li class="ms-3">
-            <a class="text-dark" href="#" target="_blank" aria-label="Facebook">
+
+          <!-- Facebook -->
+          <li class="list-inline-item me-3">
+            <a href="#" class="text-dark" target="_blank" aria-label="Facebook">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook"
                 viewBox="0 0 16 16">
                 <path
@@ -52,20 +35,44 @@
               </svg>
             </a>
           </li>
-          <li class="ms-3">
-            <a class="text-dark" href="#" target="_blank" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram"
-                viewBox="0 0 16 16">
+
+          <!-- Instagram -->
+          <li class="list-inline-item">
+            <a href="#" class="text-dark" target="_blank" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-instagram" viewBox="0 0 16 16">
                 <path
-                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.276.374.145.641.319.922.6.281.28.456.548.6.922.11.282.24.706.276 1.486.04.843.046 1.095.046 3.232s-.007 2.389-.046 3.233c-.035.78-.166 1.203-.276 1.485a2.477 2.477 0 0 1-.6.923 2.487 2.487 0 0 1-.922.6c-.282.11-.706.24-1.485.276-.843.039-1.096.046-3.232.046s-2.389-.007-3.232-.046c-.78-.035-1.203-.166-1.485-.276a2.489 2.489 0 0 1-.922-.6 2.478 2.478 0 0 1-.6-.923c-.11-.282-.241-.705-.276-1.485-.04-.844-.046-1.096-.046-3.232s.007-2.389.046-3.232c.035-.78.166-1.204.276-1.486a2.48 2.48 0 0 1 .6-.922 2.47 2.47 0 0 1 .923-.6c.282-.11.705-.24 1.485-.276.843-.039 1.095-.046 3.232-.046zm0 1.551c-2.123 0-2.372.007-3.21.046-.748.034-1.153.155-1.426.257-.36.137-.62.303-.892.575-.272.272-.438.533-.575.893-.101.272-.223.677-.256 1.425-.04.838-.046 1.087-.046 3.21s.007 2.372.046 3.21c.034.748.155 1.153.256 1.426.137.36.303.62.575.892.272.272.533.438.893.575.272.101.677.223 1.425.256.838.04 1.087.046 3.21.046s2.372-.007 3.21-.046c.748-.034 1.153-.155 1.426-.256.36-.137.62-.303.892-.575.272-.272.438-.533.575-.893.101-.272.223-.677.256-1.425.04-.838.046-1.087.046-3.21s-.007-2.372-.046-3.21c-.034-.748-.155-1.153-.256-1.426a2.489 2.489 0 0 0-.575-.892 2.489 2.489 0 0 0-.893-.575c-.272-.101-.677-.223-1.425-.256-.838-.04-1.087-.046-3.21-.046zm0 3.057a3.357 3.357 0 1 1 0 6.714 3.357 3.357 0 0 1 0-6.714zm0 1.515a1.842 1.842 0 1 0 0 3.684 1.842 1.842 0 0 0 0-3.684zm4.513-.87a.84.84 0 1 1-1.68 0 .84.84 0 0 1 1.68 0z" />
               </svg>
             </a>
           </li>
         </ul>
       </div>
     </div>
+
+    <!-- Widget de Google Maps para la ubicación -->
+  <div class="mt-3">
+      <h2 class="text-center mb-4">Nuestra Ubicación</h2>
+      <div class="text-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.5827771761747!2d-58.981585524568786!3d-27.4511106159145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cf0c80be0d3%3A0xc9f9278c74810912!2sUTN%20-%20Facultad%20Regional%20Resistencia!5e0!3m2!1ses-419!2sar!4v1726334179944!5m2!1ses-419!2sar"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
   </div>
-  <div class="text-center p-3" style="background-color: #90EE90">
-    © 2024 Sentirse Bien. Todos los derechos reservados.
+
+  
+
+  <!-- Derechos reservados -->
+  <div class="text-center p-3 bg-dark text-light mt-3">
+    <p class="mb-0">
+      &copy; <span id="current-year"></span> Sentirse Bien - Todos los derechos reservados.
+    </p>
   </div>
 </footer>
+
+<script>
+  // Muestra el año actual
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
